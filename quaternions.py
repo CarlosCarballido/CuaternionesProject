@@ -1,8 +1,9 @@
+# This module is used to do mathematical operations (pass to dregrees, tan, sen, cos, etc).
 import math
 
-
+# This class is used to create a quaternion object.
 class Quaternions:
-    def __init__(self, w, x, y, z):
+    def __init__(self, w:float, x:float, y:float, z:float):
         self.__w = w
         self.__x = x
         self.__y = y
@@ -40,12 +41,11 @@ class Quaternions:
     def z(self, value):
         self.__z = value
 
-    @property
     def __str__(self) -> str:
-        print("\tQuaternion coefficients:\nW: " + self.w +
-              "\nX: " + self.x + "\nY: " + self.y + "\nZ: " + self.z)
+        return f'Quaternion coefficients:\nW: {self.w}\nX: {self.x}\nY: {self.y}\nZ: {self.z}'
 
-    def to_euler_angles(self):
+    # This method is used to convert a quaternion to euler angles.
+    def to_euler_angles(self) -> tuple[float, float, float]:
         t0 = +2.0 * (self.w * self.x + self.y * self.z)
         t1 = +1.0 - 2.0 * (self.x * self.x + self.y * self.y)
         X = math.degrees(math.atan2(t0, t1))
