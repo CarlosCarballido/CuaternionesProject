@@ -42,8 +42,7 @@ class Quaternions:
 
     @property
     def __str__(self) -> str:
-        print("\tQuaternion coefficients:\nW: " + self.w +
-              "\nX: " + self.x + "\nY: " + self.y + "\nZ: " + self.z)
+        return "\tQuaternion coefficients:\nW: " + str(self.w) + "\nX: " + str(self.x) + "\nY: " + str(self.y) + "\nZ: " + str(self.z)
 
     def to_euler_angles(self):
         t0 = +2.0 * (self.w * self.x + self.y * self.z)
