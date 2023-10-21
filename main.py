@@ -41,9 +41,8 @@ class Quaternions:
     def z(self, value):
         self.__z = value
 
-    @property
     def __str__(self) -> str:
-        return "\tQuaternion coefficients:\nW: " + str(self.w) + "\nX: " + str(self.x) + "\nY: " + str(self.y) + "\nZ: " + str(self.z)
+        return f'Quaternion coefficients:\nW: {self.w}\nX: {self.x}\nY: {self.y}\nZ: {self.z}'
 
     # This method is used to convert a quaternion to euler angles.
     def to_euler_angles(self) -> tuple[float, float, float]:
@@ -63,8 +62,9 @@ class Quaternions:
         return X, Y, Z
 
 
-q = Quaternions(0.5, 0.33, 0.77, 0.67)
-X, Y, Z = q.to_euler_angles()
+quater = Quaternions(0.5, 0.33, 0.77, 0.67)
+print(quater)
+X, Y, Z = quater.to_euler_angles()
 print("Roll:", X)
 print("Roll:", Y)
 print("Roll:", Z)
