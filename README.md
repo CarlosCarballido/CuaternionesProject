@@ -1,1 +1,1 @@
-# This project converts quaternions into Euler angles.
+This project converts quaternions into Euler angles.
